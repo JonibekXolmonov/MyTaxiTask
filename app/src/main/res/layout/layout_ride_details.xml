@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRideDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/top_cornered_back"
+    app:behavior_hideable="false"
+    android:overScrollMode="never"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:context=".screen.RideDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_cornered_back"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvCarNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#EFEDED"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textColor="#434343"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="#EFEDED" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L 771 FA"
+                    android:textColor="#434343"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCarName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Чёрный Chevrolet Malibu"
+            android:textColor="#858585"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvCarNumber" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTypeCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_car_business"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#EFEDED"
+            app:layout_constraintTop_toBottomOf="@id/tvCarName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFromIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_circle_from"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDepartureDestination" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDepartureDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:maxLines="2"
+            android:text="улица Sharof Rashidov, Ташкент"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivFromIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivFromIcon"
+            app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivToIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_circle_to"
+            app:layout_constraintEnd_toEndOf="@id/ivFromIcon"
+            app:layout_constraintStart_toStartOf="@id/ivFromIcon"
+            app:layout_constraintTop_toBottomOf="@id/ivFromIcon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvArrivalDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:maxLines="2"
+            android:paddingEnd="40dp"
+            android:text="5a улица Асадуллы Ходжаева"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivToIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivToIcon"
+            app:layout_constraintTop_toTopOf="@id/ivToIcon" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvMore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#FEF8E8"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toStartOf="@id/cvRepeat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvArrivalDestination">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Помощь"
+                    android:textColor="#EDB118"
+                    android:textSize="12sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvRepeat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#ECF2FD"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/cvMore"
+            app:layout_constraintEnd_toStartOf="@id/cvCall"
+            app:layout_constraintStart_toEndOf="@id/cvMore"
+            app:layout_constraintTop_toTopOf="@id/cvMore">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_repeat" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Повторить"
+                    android:textColor="#3F7BEB"
+                    android:textSize="12sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvCall"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#EEF9F2"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/cvMore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cvRepeat"
+            app:layout_constraintTop_toBottomOf="@id/tvArrivalDestination"
+            app:layout_constraintTop_toTopOf="@id/cvMore">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Позвонить"
+                    android:textColor="#479F6A"
+                    android:textSize="12sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Водитель"
+            android:textColor="#434343"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvMore" />
+
+        <View
+            android:id="@+id/viewLineUnderDriver"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#EFEDED"
+            app:layout_constraintTop_toBottomOf="@id/tvDriver" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivAvatarDriver"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLineUnderDriver"
+            app:shapeAppearanceOverlay="@style/circle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDriverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Sadriddin Abdurakhimov"
+            android:textColor="#434343"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tvRating"
+            app:layout_constraintStart_toEndOf="@id/ivAvatarDriver"
+            app:layout_constraintTop_toTopOf="@id/ivAvatarDriver" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Рейтинг:"
+            android:textColor="#B8B8B8"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivAvatarDriver"
+            app:layout_constraintStart_toStartOf="@id/tvDriverName"
+            app:layout_constraintTop_toBottomOf="@id/tvDriverName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRateNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="5"
+            android:textColor="#434343"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/tvRating"
+            app:layout_constraintTop_toTopOf="@id/tvRating" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/ic_rate"
+            app:layout_constraintBottom_toBottomOf="@id/tvRateNum"
+            app:layout_constraintStart_toEndOf="@id/tvRateNum"
+            app:layout_constraintTop_toTopOf="@id/tvRateNum" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTrips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:text="Рейтинг:"
+            android:textColor="#B8B8B8"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/ivRate"
+            app:layout_constraintTop_toTopOf="@id/tvRating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTripNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="1 885"
+            android:textColor="#434343"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/tvTrips"
+            app:layout_constraintTop_toTopOf="@id/tvRating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAllDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Водитель"
+            android:textColor="#434343"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAvatarDriver" />
+
+        <View
+            android:id="@+id/viewLineAllDetails"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#EFEDED"
+            app:layout_constraintTop_toBottomOf="@id/tvAllDetails" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTariff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Тариф"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLineAllDetails" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Бизнес"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTariff" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPaymentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:text="Способ оплаты"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTariff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_money"
+            android:drawablePadding="8dp"
+            android:text="Наличными"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPaymentType" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:text="Заказ №"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPaymentType" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3917866"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvOrderNum" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:text="Дата и время поездки"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderNum" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="29 Август, 19:20"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvOrderDate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:text="Продолжительность поездки"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderDate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:45"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvOrderDuration" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCostCalculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Водитель"
+            android:textColor="#434343"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderDuration" />
+
+        <View
+            android:id="@+id/viewLineCostCalculation"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#EFEDED"
+            app:layout_constraintTop_toBottomOf="@id/tvCostCalculation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMinCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Минимальная сумма"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLineCostCalculation" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 000 UZS"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvMinCost" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDemand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Повышенный спрос"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMinCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_demand"
+            android:drawablePadding="8dp"
+            android:text="+3 000 UZS"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDemand" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTravelAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Сумма поездки"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDemand" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="31 645 UZS"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTravelAmount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Цена ожидании"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTravelAmount" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 UZS"
+            android:textColor="#434343"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPending" />
+
+        <View
+            android:id="@+id/viewLineLast"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#EFEDED"
+            app:layout_constraintTop_toBottomOf="@id/tvPending" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Итого"
+            android:textColor="#434343"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLineLast" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="39 600 UZS"
+            android:textColor="#434343"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTotal" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#FFEAE9"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="Удалить данные"
+                    android:textColor="#FF453A"
+                    android:textSize="17sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
