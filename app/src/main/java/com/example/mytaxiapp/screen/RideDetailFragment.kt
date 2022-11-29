@@ -59,6 +59,18 @@ class RideDetailFragment : Fragment(R.layout.fragment_ride_detail), OnMapReadyCa
 
         }
 
+        binding.layoutRideDetails.cvMore.setOnClickListener {
+
+        }
+
+        binding.layoutRideDetails.cvCall.setOnClickListener {
+
+        }
+
+        binding.layoutRideDetails.cvRepeat.setOnClickListener {
+
+        }
+
         binding.ivBack.setOnClickListener {
             requireActivity().onBackPressed()
         }

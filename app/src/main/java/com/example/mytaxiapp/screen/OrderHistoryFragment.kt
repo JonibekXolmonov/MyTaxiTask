@@ -1,6 +1,7 @@
 package com.example.mytaxiapp.screen
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -58,7 +59,7 @@ class OrderHistoryFragment : Fragment(R.layout.fragment_order_history) {
     private fun getUserOrderHistory() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                delay(1000)
+                delay(2000)
                 binding.rvOrders.show()
                 refreshAdapter(generateData())
                 binding.shimmerPlaceholder.stopShimmerAnimation()
@@ -74,7 +75,7 @@ class OrderHistoryFragment : Fragment(R.layout.fragment_order_history) {
 
     private fun generateOrders() = ArrayList<Order>().apply {
         for (i in 0..2)
-            this.add(Order(rideType = Random.nextInt(0, 3)))
+            this.add(Order(rideType = i))
     }
 
     private fun refreshAdapter(orders: List<DateWithOrders>) {

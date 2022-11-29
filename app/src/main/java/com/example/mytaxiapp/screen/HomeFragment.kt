@@ -5,6 +5,7 @@ import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -56,6 +57,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             closeDrawer()
         }
 
+        binding.toWhere.setOnClickListener {
+        }
+
+        binding.ivNext.setOnClickListener {
+            
+        }
+
     }
 
     private fun closeDrawer() {
@@ -81,30 +89,28 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
 
     private fun cameraMoveStartedListener(googleMap: GoogleMap) {
 
+        getLocationName(googleMap)
+
         googleMap.setOnCameraMoveStartedListener {
-            viewLifecycleOwner.lifecycleScope.launch {
-                viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                    binding.tvPinnedLocation.text = "Loading."
-                    delay(400)
-                    binding.tvPinnedLocation.text = "Loading.."
-                    delay(400)
-                    binding.tvPinnedLocation.text = "Loading..."
-                }
-            }
+            binding.tvPinnedLocation.text = "Loading..."
         }
 
         googleMap.setOnCameraIdleListener {
-            val gcd = Geocoder(context, Locale.getDefault())
-            val addresses: List<Address> = gcd.getFromLocation(
-                googleMap.cameraPosition.target.latitude,
-                googleMap.cameraPosition.target.longitude,
-                1
-            )
-            if (addresses.isNotEmpty()) {
-                binding.tvPinnedLocation.text = addresses[0].getAddressLine(0)
-            } else {
-                // do your stuff
-            }
+            getLocationName(googleMap)
+        }
+    }
+
+    private fun getLocationName(googleMap: GoogleMap) {
+        val gcd = Geocoder(context, Locale.getDefault())
+        val addresses: List<Address> = gcd.getFromLocation(
+            googleMap.cameraPosition.target.latitude,
+            googleMap.cameraPosition.target.longitude,
+            1
+        )
+        if (addresses.isNotEmpty()) {
+            binding.tvPinnedLocation.text = addresses[0].getAddressLine(0)
+        } else {
+            binding.tvPinnedLocation.text = getText(R.string.str_cannot_load)
         }
     }
 
