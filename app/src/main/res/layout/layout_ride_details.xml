@@ -37,6 +37,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="25"
+                    android:fontFamily="@font/caladea_regular"
+                    android:letterSpacing="-0.01"
                     android:textColor="#434343"
                     android:textSize="20sp" />
 
@@ -51,6 +53,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="L 771 FA"
+                    android:letterSpacing="-0.01"
+                    android:fontFamily="@font/caladea_regular"
                     android:textColor="#434343"
                     android:textSize="20sp" />
 
@@ -61,6 +65,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvCarName"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/lato_regular"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
@@ -96,6 +101,7 @@
             app:layout_constraintTop_toTopOf="@id/tvDepartureDestination" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvDepartureDestination"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -121,6 +127,7 @@
             app:layout_constraintTop_toBottomOf="@id/ivFromIcon" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvArrivalDestination"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -161,6 +168,7 @@
                     android:src="@drawable/ic_more" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/lato_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -199,6 +207,7 @@
                     android:src="@drawable/ic_repeat" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/lato_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -237,6 +246,7 @@
                     android:src="@drawable/ic_phone" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/lato_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -256,6 +266,7 @@
             android:text="Водитель"
             android:textColor="#434343"
             android:textSize="20sp"
+            android:fontFamily="@font/lato_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cvMore" />
 
@@ -278,6 +289,7 @@
             app:shapeAppearanceOverlay="@style/circle" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvDriverName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -290,6 +302,7 @@
             app:layout_constraintTop_toTopOf="@id/ivAvatarDriver" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -302,6 +315,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvDriverName" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvRateNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -323,6 +337,7 @@
             app:layout_constraintTop_toTopOf="@id/tvRateNum" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvTrips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -334,6 +349,7 @@
             app:layout_constraintTop_toTopOf="@id/tvRating" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvTripNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -345,6 +361,7 @@
             app:layout_constraintTop_toTopOf="@id/tvRating" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvAllDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -364,6 +381,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvAllDetails" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvTariff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -384,6 +402,7 @@
             app:layout_constraintTop_toTopOf="@id/tvTariff" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvPaymentType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -406,6 +425,7 @@
             app:layout_constraintTop_toTopOf="@id/tvPaymentType" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvOrderNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -426,6 +446,7 @@
             app:layout_constraintTop_toTopOf="@id/tvOrderNum" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvOrderDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -446,6 +467,7 @@
             app:layout_constraintTop_toTopOf="@id/tvOrderDate" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvOrderDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -466,6 +488,7 @@
             app:layout_constraintTop_toTopOf="@id/tvOrderDuration" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvCostCalculation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -485,6 +508,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvCostCalculation" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvMinCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -505,6 +529,7 @@
             app:layout_constraintTop_toTopOf="@id/tvMinCost" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvDemand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -527,6 +552,7 @@
             app:layout_constraintTop_toTopOf="@id/tvDemand" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvTravelAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -547,6 +573,7 @@
             app:layout_constraintTop_toTopOf="@id/tvTravelAmount" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvPending"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -575,6 +602,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvPending" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:fontFamily="@font/lato_regular"
             android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -617,6 +645,7 @@
                     android:src="@drawable/ic_delete" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/lato_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="9dp"

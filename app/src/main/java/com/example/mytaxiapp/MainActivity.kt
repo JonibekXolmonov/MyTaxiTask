@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setStatusBarColorAndAppearance(statusBarColor: String, isLight: Boolean ) {
         try {
-            window.statusBarColor = (Color.parseColor(statusBarColor))// Or we can use from resource color:  ContextCompat.getColor(mContext, R.color.colorPrimary)
+//            window.statusBarColor = (Color.parseColor(statusBarColor))// Or we can use from resource color:  ContextCompat.getColor(mContext, R.color.colorPrimary)
             WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = isLight
         } catch (e: Exception) {
             e.printStackTrace()

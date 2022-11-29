@@ -41,12 +41,11 @@ class OrderOfDateAdapter : ListAdapter<DateWithOrders, OrderOfDateAdapter.VH>(Di
     }
 
     private fun refreshDateOrders(ordersInDate: List<Order>, rvDateOrders: RecyclerView) {
-        rvDateOrders.adapter = OrderAdapter().run {
-            submitList(ordersInDate)
-            click = {
-                this@OrderOfDateAdapter.click()
-            }
-            this
+        val adapter = OrderAdapter()
+        adapter.submitList(ordersInDate)
+        rvDateOrders.adapter = adapter
+        adapter.click = {
+            this.click()
         }
     }
 }
