@@ -1,11 +1,9 @@
-package com.example.mytaxiapp.screen
+package com.example.mytaxiapp.screen.home
 
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -61,7 +59,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
         }
 
         binding.ivNext.setOnClickListener {
-            
+
         }
 
     }
@@ -101,16 +99,24 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
     }
 
     private fun getLocationName(googleMap: GoogleMap) {
-        val gcd = Geocoder(context, Locale.getDefault())
-        val addresses: List<Address> = gcd.getFromLocation(
-            googleMap.cameraPosition.target.latitude,
-            googleMap.cameraPosition.target.longitude,
-            1
-        )
-        if (addresses.isNotEmpty()) {
-            binding.tvPinnedLocation.text = addresses[0].getAddressLine(0)
-        } else {
-            binding.tvPinnedLocation.text = getText(R.string.str_cannot_load)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                try {
+                    val gcd = Geocoder(context, Locale.getDefault())
+                    val addresses: List<Address> = gcd.getFromLocation(
+                        googleMap.cameraPosition.target.latitude,
+                        googleMap.cameraPosition.target.longitude,
+                        1
+                    )
+                    if (addresses.isNotEmpty()) {
+                        binding.tvPinnedLocation.text = addresses[0].getAddressLine(0)
+                    } else {
+                        binding.tvPinnedLocation.text = getText(R.string.str_cannot_load)
+                    }
+                } catch (e: Exception) {
+                    binding.tvPinnedLocation.text = getText(R.string.str_cannot_load)
+                }
+            }
         }
     }
 

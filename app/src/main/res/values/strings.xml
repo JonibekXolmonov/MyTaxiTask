@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">MyTaxiTask</string>
-    <string name="str_cannot_load">Yuklab bo\'lmadi</string>
+    <string name="str_cannot_load">Yuklab bo\'lmadi. Ehtimol internet yaxshi emas</string>
 </resources>

@@ -5,17 +5,17 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.HomeFragment">
+    tools:context=".screen.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivMenu"
@@ -234,11 +234,15 @@
                 app:layout_constraintTop_toTopOf="@id/tvMyOrders" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:gravity="center_vertical"
+                android:paddingVertical="10dp"
                 android:id="@+id/tvMyOrders"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_marginEnd="16dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/lato_regular"
                 android:text="Мои поездки"
                 android:textColor="#F4F4F4"
@@ -251,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
                 android:background="#2B2B28"
                 app:layout_constraintTop_toBottomOf="@id/tvMyOrders" />
@@ -268,14 +272,18 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPaymentType"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:paddingVertical="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/lato_regular"
                 android:text="Способы оплаты"
                 android:textColor="#F4F4F4"
                 android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
                 app:layout_constraintStart_toEndOf="@id/ivPaymentType"
                 app:layout_constraintTop_toBottomOf="@id/view1"
                 app:layout_goneMarginStart="8dp" />
@@ -285,7 +293,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
                 android:background="#2B2B28"
                 app:layout_constraintTop_toBottomOf="@id/tvPaymentType" />
@@ -302,12 +310,16 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvFavoriteAddress"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/lato_regular"
                 android:text="Способы оплаты"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
                 android:textColor="#F4F4F4"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/ivFavoriteAddress"
